@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Complete Intro to React: svideo</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="node_modules/react/dist/react.js" charset="utf-8"></script>
+    <script src="node_modules/react-dom/dist/react-dom.js" charset="utf-8"></script>
+    <script>
+
+      const ce = React.createElement
+
+      const MyTitle = function(props) {
+        return (
+          // null represents the particular properties or attributes
+          // that will be passed in  -->  could also use {}
+          ce('div', null,
+            ce('h1', null, props.title)
+          )
+        )
+      }
+      // MyFirstComponent is a class
+      // createElement creates an instance of a div
+      const MyFirstComponent = function() {
+        return ce('div', {id: 'my-first-component'},
+          ce(MyTitle, {title: 'Game of Thrones'}),
+          ce(MyTitle, {title: 'Stanger Things'}),
+          ce(MyTitle, {title: 'Rick and Morty'}),
+          ce(MyTitle, {title: 'Silicon Valley'}),
+        )
+      }
+
+      ReactDOM.render(
+        React.createElement(MyFirstComponent),
+        document.getElementById('app')
+      )
+    </script>
+
+  </body>
+</html>
