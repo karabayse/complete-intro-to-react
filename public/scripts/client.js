@@ -11,9 +11,10 @@ const MyTitle = function(props) {
   // )
 
   // JSX
+  const style = {color: props.color}
   return (
     <div>
-      <h1>{props.title}</h1>;
+      <h1 style={style}>{props.title.toUpperCase()}</h1>;
     </div>
   );
 };
